@@ -52,6 +52,7 @@ public class Core {
 
 	@Instance("YMMoretools")
 	public static Core instance;
+<<<<<<< HEAD
 
 	@SidedProxy(clientSide = "com.github.yusukemac.MoreTools.proxy.ClientProxy", serverSide = "com.github.yusukemac.MoreTools.proxy.CommonProxy")
 	public static CommonProxy proxy;
@@ -78,6 +79,34 @@ public class Core {
 	public static String[] names = new String[] {"§6超すごい整地用ツール§r", "§a自然系のツール§r", "§0✝漆黒のダイヤ大量消費ツール✝§r", "§d石専用ツール§r"};
 
 	/** HammerのIDを入れておくための入れ物 */
+=======
+	
+	@SidedProxy(clientSide = "com.github.yusukemac.MoreTools.proxy.ClientProxy", serverSide = "com.github.yusukemac.MoreTools.proxy.CommonProxy")
+	public static CommonProxy proxy;
+	
+	//Achievements
+	public static Achievement timeToSnowRemoval, timeToDismantling, getPlasticIngot, craftToolOfTheEarth;
+	public static int AchievementID = 6300;
+	
+	//Achievement page name
+	public static final String ACHIEVEMENT_PAGE_NAME = "Yusukemac's MoreTools";
+	
+	//Item / Block ids.
+	public static int[] IDs;
+	public static Property hiddennameProp, hammerProp, snowplowProp, superdiggerProp, toolofnatureProp, tooloftheearthProp, stonebreakerProp, plasticProp, tooloftheearthdebrisProp;
+	
+	//Tools
+	public static Item hammerWood, hammerStone, hammerIron, hammerGold, hammerDiamond, hammerPlastic,
+						snowplowWood, snowplowStone, snowplowIron, snowplowGold, snowplowDiamond, snowplowPlastic,
+						superDigger, toolOfNature, toolOfTheEarth, StoneBreaker, toolOfTheEarthDebris;
+	//ingot
+	public static Item ingotPlastic;
+	
+	//ふざけてる名前
+	public static String[] names = new String[] {"§6超すごい整地用ツール§r", "§a自然系のツール§r", "§0✝漆黒のダイヤ大量消費ツール✝§r", "§d石専用ツール§r"};
+	
+	//
+>>>>>>> 22846ccad5ff9d34412f6c8638f24061f1a5eaa2
 	public static int HammerIDs[];
 	/** SnowplowのIDを入れておくための入れ物*/
 	public int SnowplowIDs[];
@@ -87,10 +116,61 @@ public class Core {
 	public EnumToolMaterial PLASTIC;
 	/** プラスチック鉱石 */
 	public static Block orePlastic;
+<<<<<<< HEAD
 
 	/** 追加ツールのためのクリエイティブタブ **/
 	public static final CreativeTabs tabYMTools = new CreativeTabYMTools("YMTools");
 
+=======
+	
+	public static final CreativeTabs tabYMTools = new CreativeTabYMTools("yusukemac's Tools");
+	
+	@Mod.EventHandler
+	public void Init(FMLInitializationEvent event)
+	{
+		
+		//Itemをすべて登録
+		Register.registerItem(snowplowWood, "Wood Snowplow", "木の除雪機");
+		Register.registerItem(snowplowStone, "Stone Snowplow", "石の除雪機");
+		Register.registerItem(snowplowIron, "Iron Snowplow", "鉄の除雪機");
+		Register.registerItem(snowplowGold, "Gold Snowplow", "金の除雪機");
+		Register.registerItem(snowplowDiamond, "Diamond Snowplow", "ダイヤモンドの除雪機");
+		Register.registerItem(snowplowPlastic, "Plastic Snowplow", "プラスチックの除雪機");
+		
+		Register.registerItem(hammerWood, "Wood Hammer", "木のハンマー");
+		Register.registerItem(hammerStone, "Stone Hammer", "石のハンマー");
+		Register.registerItem(hammerIron, "Iron Hammer", "鉄のハンマー");
+		Register.registerItem(hammerGold, "Gold Hammer", "金のハンマー");
+		Register.registerItem(hammerDiamond, "Diamond Hammer", "ダイヤモンドのハンマー");
+		Register.registerItem(hammerPlastic, "Plastic Hammer", "プラスチックのハンマー");
+		
+		//おふざけ名前適用
+		if (hiddennameProp.getBoolean(false))
+		{
+			Register.registerItem(superDigger, "§6Super Digger", names[0]);
+			Register.registerItem(toolOfNature, "§aTool of Nature", names[1]);
+			Register.registerItem(toolOfTheEarth, "§bTool of The Earth", names[2]);
+			Register.registerItem(StoneBreaker, "§dSuper Breaker§r", names[3]);
+		}
+		//ふつうの名前
+		else {
+			Register.registerItem(superDigger, "§6Super Digger§r", "§6スーパーディガー§r");
+			Register.registerItem(toolOfNature, "§aTool of Nature", "§a自然のツール§r");
+			Register.registerItem(toolOfTheEarth, "§bTool of The Earth§r", "§b地球のツール§r");
+			Register.registerItem(StoneBreaker, "Stone Breaker", "§dストーン破壊機§r");
+		}
+		
+		Register.registerItem(ingotPlastic, "Plastic ingot", "プラスチックのインゴット");
+		Register.registerItem(toolOfTheEarthDebris, "Tool of The Earth's Debris", "地球のツールの破片");
+		
+		Register.registerBlock(orePlastic, "Plastic ore", "プラスチック(の原料)鉱石");
+		
+		GameRegistry.registerWorldGenerator(new OreGenerator());
+		
+		registerRecipes();
+		
+	}
+>>>>>>> 22846ccad5ff9d34412f6c8638f24061f1a5eaa2
 	@Mod.EventHandler
 	public void PreInit(FMLPreInitializationEvent event)
 	{
@@ -145,6 +225,7 @@ public class Core {
 		finally {
 			cfg.save();
 		}
+<<<<<<< HEAD
 
 		//Itemの設定。無機能アイテムはItemで作ってます
 		// @see com.github.yusukemac.MoreTools.item.ItemBase
@@ -152,6 +233,15 @@ public class Core {
 		ingotPlastic = new Item(PlasticID).setCreativeTab(tabYMTools).setUnlocalizedName("Plastic ingot").setTextureName("plastic_ingot");
 		toolOfTheEarthDebris = new Item(ToolOfTheEarthDebrisID).setCreativeTab(tabYMTools).setUnlocalizedName("Tool of The Earth's Debris").setTextureName("debris_tooloftheearth");
 
+=======
+		
+		//Itemの設定。無機能アイテムはItemBaseで作ってます
+		// @see com.github.yusukemac.MoreTools.item.ItemBase
+		
+		ingotPlastic = new ItemBase(PlasticID).setCreativeTab(tabYMTools).setUnlocalizedName("Plastic ingot").setTextureName("plastic_ingot");
+		toolOfTheEarthDebris = new ItemBase(ToolOfTheEarthDebrisID).setCreativeTab(tabYMTools).setUnlocalizedName("Tool of The Earth's Debris").setTextureName("debris_tooloftheearth");
+		
+>>>>>>> 22846ccad5ff9d34412f6c8638f24061f1a5eaa2
 		//ハンマーの設定。全部ItemHammerで
 		// @see com.github.yusukemac.MoreTools.item.ItemHammer
 		hammerWood = new ItemHammer(HammerIDs[0], EnumToolMaterial.WOOD).setUnlocalizedName("Wood Hammer").setTextureName("wood_hammer");
@@ -160,7 +250,11 @@ public class Core {
 		hammerGold = new ItemHammer(HammerIDs[3], EnumToolMaterial.GOLD).setUnlocalizedName("Gold Hammer").setTextureName("gold_hammer");
 		hammerDiamond = new ItemHammer(HammerIDs[4], EnumToolMaterial.EMERALD).setUnlocalizedName("Diamond Hammer").setTextureName("diamond_hammer");
 		hammerPlastic = new ItemHammer(HammerIDs[5], ToolMaterials.PLASTIC).setUnlocalizedName("Plastic Hammer").setTextureName("plastic_hammer");
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 22846ccad5ff9d34412f6c8638f24061f1a5eaa2
 		//除雪機の設定。全部ItemSnowplowで
 		// @see com.github.yusukemac.MoreTools.item.ItemSnowplow
 		snowplowWood = new ItemSnowplow(SnowplowIDs[0], ToolMaterials.WOOD_snowplow).setUnlocalizedName("Wood Snowplow").setTextureName("wood_snowplow");
@@ -169,9 +263,15 @@ public class Core {
 		snowplowGold = new ItemSnowplow(SnowplowIDs[3], ToolMaterials.GOLD_snowplow).setUnlocalizedName("Gold Snowplow").setTextureName("gold_snowplow");
 		snowplowDiamond = new ItemSnowplow(SnowplowIDs[4], ToolMaterials.DIAMOND_snowplow).setUnlocalizedName("Diamond Snowplow").setTextureName("diamond_snowplow");
 		snowplowPlastic = new ItemSnowplow(SnowplowIDs[5], ToolMaterials.PLASTIC).setUnlocalizedName("Plastic Snowplow").setTextureName("plastic_snowplow");
+<<<<<<< HEAD
 
 		//強力なツールの設定。
 
+=======
+		
+		//強力なツールの設定。
+		
+>>>>>>> 22846ccad5ff9d34412f6c8638f24061f1a5eaa2
 		superDigger = new ItemSuperDigger(SuperDiggerID, ToolMaterials.SUPERDIGGER).setUnlocalizedName("Super Digger").setTextureName("superdigger");
 		toolOfNature = new ItemToolOfNature(ToolOfNatureID, ToolMaterials.TOOLOFNATURE).setUnlocalizedName("Tool of Nature").setTextureName("toolofnature");
 		toolOfTheEarth = new ItemToolOfTheEarth(ToolOfTheEarthID, ToolMaterials.TOOLOFTHEEARTH).setUnlocalizedName("Tool of The Earth").setTextureName("tooloftheearth");
@@ -182,7 +282,11 @@ public class Core {
 		orePlastic = new Block(1000, Material.rock).setHardness(4.0F).setStepSound(Block.soundStoneFootstep).setUnlocalizedName("orePlastic").setCreativeTab(tabYMTools).setTextureName("plastic_ore");
 		OreDictionary.registerOre("orePlastic", orePlastic);
 		OreDictionary.registerOre("ingotPlastic", ingotPlastic);
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> 22846ccad5ff9d34412f6c8638f24061f1a5eaa2
 		// 実績の設定。
 		timeToSnowRemoval = new Achievement(AchievementID, "timeToSnowRemoval", 0, 0, snowplowWood, (Achievement)null).setIndependent().registerAchievement();
 		timeToDismantling = new Achievement(AchievementID+1, "timeToDismantling", 2, 1, hammerWood, timeToSnowRemoval).registerAchievement();
@@ -196,6 +300,7 @@ public class Core {
 		proxy.init();
 
 	}
+<<<<<<< HEAD
 	@Mod.EventHandler
 	public void Init(FMLInitializationEvent event)
 	{
@@ -249,6 +354,14 @@ public class Core {
 	 * @author yusukemac
 	 */
 	private void setTranslatedName()
+=======
+	
+	/**
+	* @author yusukemac
+	* 実績の名前を設定します。
+	*/
+	public void achievementsName()
+>>>>>>> 22846ccad5ff9d34412f6c8638f24061f1a5eaa2
 	{
 		
 		//.descってのはdescriptionの略みたい
@@ -274,12 +387,21 @@ public class Core {
 
 		LanguageRegistry.instance().addStringLocalization("itemGroup.YMTools", "Yusukemac's MoreTools");
 	}
+<<<<<<< HEAD
 
 	/**
 	 * @author yusukemac
 	 * 一連のレシピを登録。
 	 */
 	private void registerRecipes()
+=======
+	
+	/**
+	* @author yusukemac
+	* 一連のレシピを登録。
+	*/
+	public void registerRecipes()
+>>>>>>> 22846ccad5ff9d34412f6c8638f24061f1a5eaa2
 	{
 		ToolHelper.addRecipe(hammerWood, 1, ToolHelper.createHammerObject(Block.planks, Item.stick));
 		ToolHelper.addRecipe(hammerStone, 1, ToolHelper.createHammerObject(Block.cobblestone, Item.stick));
