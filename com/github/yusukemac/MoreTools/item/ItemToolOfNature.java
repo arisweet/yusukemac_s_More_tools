@@ -21,6 +21,13 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.Event.Result;
 import net.minecraftforge.event.entity.player.UseHoeEvent;
 
+/**
+ * Tool of Natureの詳細設定的な何か
+ * 
+ * ItemSwordを継承してますので、右クリックしている間はガードします
+ * 
+ * @author yusukemac
+ */
 public class ItemToolOfNature extends ItemSword
 {
 	

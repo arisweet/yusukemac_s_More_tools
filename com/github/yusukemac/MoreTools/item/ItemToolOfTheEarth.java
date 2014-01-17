@@ -13,6 +13,12 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
+/**
+ * Tool of The Earthの詳細設定
+ * 持ってる時にポーション効果を与えたりしてる
+ * 
+ * @author yusukemac
+ */
 public class ItemToolOfTheEarth extends ItemToolOfNature
 {
 	public final Block[] blocksEffectiveAgainst = Block.blocksList;
@@ -24,12 +30,14 @@ public class ItemToolOfTheEarth extends ItemToolOfNature
 	public ItemToolOfTheEarth(int par1, EnumToolMaterial par2EnumToolMaterial) {
 		super(par1, par2EnumToolMaterial);
 		this.weaponDamage = 5.0F + par2EnumToolMaterial.getDamageVsEntity();
-		// TODO 自動生成されたコンストラクター・スタブ
 	}
+	
+	//ポーション効果を個々で与えます
 	public void onUpdate(ItemStack par1ItemStack, World par2World, Entity par3Entity, int par4, boolean par5)
 	{
 		if (!par2World.isRemote)
 		{
+			//手に持っている場合
 			if (par5)
 			{
 				player = ((EntityPlayer)par3Entity);	

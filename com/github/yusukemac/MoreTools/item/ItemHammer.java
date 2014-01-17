@@ -17,6 +17,13 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
 
+/**
+ * Pickaxe+Shovel的なアイテム
+ * 
+ * すごいblocksEffectiveAgainstの追加めんどいとおもったけどそうでもなかった
+ * 
+ * @author yusukemac
+ */
 public class ItemHammer extends ItemTool {
 	
 	public float efficiencyOnProperMaterial;

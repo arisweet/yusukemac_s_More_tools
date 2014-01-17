@@ -14,6 +14,12 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 import net.minecraftforge.oredict.OreDictionary;
 
+/**
+ * Super Diggerの詳細設定的な
+ * Hammerの強化版みたいな感じ。一見あまり使える子ではないと見えるけど実はすごい重要な素材だったりする
+ * 
+ * @author yusukemac
+ */
 public final class ItemSuperDigger extends ItemHammer
 {
 	

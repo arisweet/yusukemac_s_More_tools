@@ -7,6 +7,13 @@ import net.minecraft.world.chunk.IChunkProvider;
 import net.minecraft.world.gen.feature.WorldGenMinable;
 import cpw.mods.fml.common.IWorldGenerator;
 
+/**
+ * 新しい鉱石(プラスチック鉱石)を生成します。
+ * 最高y 64
+ * 
+ * 正直ココらへん理解してない
+ * @author yusukemac
+ */
 public class OreGenerator implements IWorldGenerator
 {
 

@@ -5,6 +5,11 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
+/**
+ * このメソッドも同じようにどうにかする
+ * 
+ * @author yusukemac
+ */
 public class ToolHelper {
 	
 	public static void addRecipe(net.minecraft.item.Item output, int stackSize, Object... params)

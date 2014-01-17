@@ -8,10 +8,10 @@ import net.minecraft.item.Item;
 /**
  *
  * 	Register class.
+ * 
+ * そのうち消すかも
  *
- *	@author yusuke
- *	@since 1
- *
+ *	@author yusukemac
  */
 public class Register {
 	

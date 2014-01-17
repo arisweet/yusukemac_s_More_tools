@@ -10,6 +10,11 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.world.World;
 
+/**
+ * 雪と雪ブロックにしか対応してない、除雪機。
+ * すごいシンプル
+ * @author yusukemac
+ */
 public class ItemSnowplow extends ItemTool {
 	
 	public static final Block[] blocksEffectiveAgainst = new Block[] {Block.snow, Block.blockSnow};

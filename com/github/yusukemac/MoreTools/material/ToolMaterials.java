@@ -3,6 +3,11 @@ package com.github.yusukemac.MoreTools.material;
 import net.minecraft.item.EnumToolMaterial;
 import net.minecraftforge.common.EnumHelper;
 
+/**
+ * ツールのマテリアル設定。これEnumでいろいろやったほうが良かったかも
+ * 
+ * @author yusukemac
+ */
 public class ToolMaterials {
 	
 	public static EnumToolMaterial PLASTIC, SUPERDIGGER, TOOLOFNATURE, TOOLOFTHEEARTH, STONEBREAKER;
