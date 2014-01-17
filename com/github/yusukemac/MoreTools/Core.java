@@ -41,29 +41,38 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 		modid = "YMMoretools",
 		name = "yusukemac's More tools",
 		version = "5_srg/1.6.4")
+
 @NetworkMod(clientSideRequired = true)
 public class Core {
 	
 	@Instance("YMMoretools")
 	public static Core instance;
+	
 	@SidedProxy(clientSide = "com.github.yusukemac.MoreTools.proxy.ClientProxy", serverSide = "com.github.yusukemac.MoreTools.proxy.CommonProxy")
 	public static CommonProxy proxy;
 	
+	//Achievements
 	public static Achievement timeToSnowRemoval, timeToDismantling, getPlasticIngot, craftToolOfTheEarth;
 	public static int AchievementID = 6300;
 	
+	//Achievement page name
 	public static final String ACHIEVEMENT_PAGE_NAME = "Yusukemac's MoreTools";
 	
+	//Item / Block ids.
 	public static int[] IDs;
 	public static Property hiddennameProp, hammerProp, snowplowProp, superdiggerProp, toolofnatureProp, tooloftheearthProp, stonebreakerProp, plasticProp, tooloftheearthdebrisProp;
 	
+	//Tools
 	public static Item hammerWood, hammerStone, hammerIron, hammerGold, hammerDiamond, hammerPlastic,
 						snowplowWood, snowplowStone, snowplowIron, snowplowGold, snowplowDiamond, snowplowPlastic,
 						superDigger, toolOfNature, toolOfTheEarth, StoneBreaker, toolOfTheEarthDebris;
+	//ingot
 	public static Item ingotPlastic;
 	
+	//ふざけてる名前
 	public static String[] names = new String[] {"§6超すごい整地用ツール§r", "§a自然系のツール§r", "§0✝漆黒のダイヤ大量消費ツール✝§r", "§d石専用ツール§r"};
 	
+	//
 	public static int HammerIDs[];
 	public static int SnowplowIDs[];
 	public static int SuperDiggerID, ToolOfNatureID, ToolOfTheEarthID, PlasticID, StoneBreakerID, ToolOfTheEarthDebrisID;
@@ -76,7 +85,7 @@ public class Core {
 	public void Init(FMLInitializationEvent event)
 	{
 		
-		
+		//Itemをすべて登録
 		Register.registerItem(snowplowWood, "Wood Snowplow", "木の除雪機");
 		Register.registerItem(snowplowStone, "Stone Snowplow", "石の除雪機");
 		Register.registerItem(snowplowIron, "Iron Snowplow", "鉄の除雪機");
@@ -91,6 +100,7 @@ public class Core {
 		Register.registerItem(hammerDiamond, "Diamond Hammer", "ダイヤモンドのハンマー");
 		Register.registerItem(hammerPlastic, "Plastic Hammer", "プラスチックのハンマー");
 		
+		//おふざけ名前適用
 		if (hiddennameProp.getBoolean(false))
 		{
 			Register.registerItem(superDigger, "§6Super Digger", names[0]);
@@ -98,6 +108,7 @@ public class Core {
 			Register.registerItem(toolOfTheEarth, "§bTool of The Earth", names[2]);
 			Register.registerItem(StoneBreaker, "§dSuper Breaker§r", names[3]);
 		}
+		//ふつうの名前
 		else {
 			Register.registerItem(superDigger, "§6Super Digger§r", "§6スーパーディガー§r");
 			Register.registerItem(toolOfNature, "§aTool of Nature", "§a自然のツール§r");
@@ -169,9 +180,15 @@ public class Core {
 		finally {
 			cfg.save();
 		}
+		
+		//Itemの設定。無機能アイテムはItemBaseで作ってます
+		// @see com.github.yusukemac.MoreTools.item.ItemBase
+		
 		ingotPlastic = new ItemBase(PlasticID).setCreativeTab(tabYMTools).setUnlocalizedName("Plastic ingot").setTextureName("plastic_ingot");
 		toolOfTheEarthDebris = new ItemBase(ToolOfTheEarthDebrisID).setCreativeTab(tabYMTools).setUnlocalizedName("Tool of The Earth's Debris").setTextureName("debris_tooloftheearth");
 		
+		//ハンマーの設定。全部ItemHammerで
+		// @see com.github.yusukemac.MoreTools.item.ItemHammer
 		hammerWood = new ItemHammer(HammerIDs[0], EnumToolMaterial.WOOD).setUnlocalizedName("Wood Hammer").setTextureName("wood_hammer");
 		hammerStone = new ItemHammer(HammerIDs[1], EnumToolMaterial.STONE).setUnlocalizedName("Stone Hammer").setTextureName("stone_hammer");
 		hammerIron = new ItemHammer(HammerIDs[2], EnumToolMaterial.IRON).setUnlocalizedName("Iron Hammer").setTextureName("iron_hammer");
@@ -179,12 +196,16 @@ public class Core {
 		hammerDiamond = new ItemHammer(HammerIDs[4], EnumToolMaterial.EMERALD).setUnlocalizedName("Diamond Hammer").setTextureName("diamond_hammer");
 		hammerPlastic = new ItemHammer(HammerIDs[5], ToolMaterials.PLASTIC).setUnlocalizedName("Plastic Hammer").setTextureName("plastic_hammer");
 		
+		//除雪機の設定。全部ItemSnowplowで
+		// @see com.github.yusukemac.MoreTools.item.ItemSnowplow
 		snowplowWood = new ItemSnowplow(SnowplowIDs[0], ToolMaterials.WOOD_snowplow).setUnlocalizedName("Wood Snowplow").setTextureName("wood_snowplow");
 		snowplowStone = new ItemSnowplow(SnowplowIDs[1], ToolMaterials.STONE_snowplow).setUnlocalizedName("Stone Snowplow").setTextureName("stone_snowplow");
 		snowplowIron = new ItemSnowplow(SnowplowIDs[2], ToolMaterials.IRON_snowplow).setUnlocalizedName("Iron Snowplow").setTextureName("iron_snowplow");
 		snowplowGold = new ItemSnowplow(SnowplowIDs[3], ToolMaterials.GOLD_snowplow).setUnlocalizedName("Gold Snowplow").setTextureName("gold_snowplow");
 		snowplowDiamond = new ItemSnowplow(SnowplowIDs[4], ToolMaterials.DIAMOND_snowplow).setUnlocalizedName("Diamond Snowplow").setTextureName("diamond_snowplow");
 		snowplowPlastic = new ItemSnowplow(SnowplowIDs[5], ToolMaterials.PLASTIC).setUnlocalizedName("Plastic Snowplow").setTextureName("plastic_snowplow");
+		
+		//強力なツールの設定。
 		
 		superDigger = new ItemSuperDigger(SuperDiggerID, ToolMaterials.SUPERDIGGER).setUnlocalizedName("Super Digger").setTextureName("superdigger");
 		toolOfNature = new ItemToolOfNature(ToolOfNatureID, ToolMaterials.TOOLOFNATURE).setUnlocalizedName("Tool of Nature").setTextureName("toolofnature");
@@ -196,7 +217,7 @@ public class Core {
 		OreDictionary.registerOre("orePlastic", orePlastic);
 		OreDictionary.registerOre("ingotPlastic", ingotPlastic);
 		
-		
+		// 実績の設定。
 		timeToSnowRemoval = new Achievement(AchievementID, "timeToSnowRemoval", 0, 0, snowplowWood, (Achievement)null).setIndependent().registerAchievement();
 		timeToDismantling = new Achievement(AchievementID+1, "timeToDismantling", 2, 1, hammerWood, timeToSnowRemoval).registerAchievement();
 		getPlasticIngot = new Achievement(AchievementID+2, "getPlasticIngot",4, -1, ingotPlastic, timeToDismantling).registerAchievement();
@@ -210,6 +231,10 @@ public class Core {
 		
 	}
 	
+	/**
+	* @author yusukemac
+	* 実績の名前を設定します。
+	*/
 	public void achievementsName()
 	{
 		LanguageRegistry.instance().addStringLocalization(timeToSnowRemoval.statName, "en_US", "Time to Snow removal!");
@@ -233,6 +258,10 @@ public class Core {
 		LanguageRegistry.instance().addStringLocalization(craftToolOfTheEarth.statName + ".desc", "ja_JP", "§b地球のツール§rを作る");
 	}
 	
+	/**
+	* @author yusukemac
+	* 一連のレシピを登録。
+	*/
 	public void registerRecipes()
 	{
 		ToolHelper.addRecipe(hammerWood, 1, ToolHelper.createHammerObject(Block.planks, Item.stick));
