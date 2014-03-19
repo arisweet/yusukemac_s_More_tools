@@ -1,0 +1,35 @@
+item.snowplowWood.name=木の除雪機
+item.snowplowStone.name=石の除雪機
+item.snowplowIron.name=鉄の除雪機
+item.snowplowGold.name=金の除雪機
+item.snowplowDiamond.name=ダイヤモンドの除雪機
+item.snowplowPlastic.name=プラスチックの除雪機
+
+item.hammerWood.name=木のハンマー
+item.hammerStone.name=石のハンマー
+item.hammerIron.name=鉄のハンマー
+item.hammerGold.name=金のハンマー
+item.hammerDiamond.name=ダイヤモンドのハンマー
+item.hammerPlastic.name=プラスチックのハンマー
+
+item.superDigger.name=§6Super Digger§r
+item.toolOfNature.name=§aTool of Nature§r
+item.toolOfTheEarth.name=§bTool of The Earth§r
+item.stoneBreaker.name=§dStone Breaker§r
+
+item.ingotPlastic.name=プラスチックインゴット
+item.toolOfTheEarthDebris.name=Tool of The Earth の破片
+
+tile.orePlastic.name=プラスチック鉱石
+
+itemGroup.YMTools=Yusukemac's MoreTools
+
+achievement.timeToSnowRemoval=除雪の時間!
+achievement.timeToDismantling=解体の時間!
+achievement.getPlasticIngot=プラスチックインゴットを手に入れる
+achievement.millionaire=§eMILLIONAIRE!§r
+
+achievement.timeToSnowRemoval.desc=除雪機を作る
+achievement.timeToDismantling.desc=ハンマーを作る
+achievement.getPlasticIngot.desc=鉱石を焼き、インゴットを手に入れよう
+achievement.millionaire.desc=§bTool of The Earth§rを作る

@@ -1,0 +1,11 @@
+[
+{
+  "modid": "YMMoreTools",
+  "name": "Yusukemac's MoreTools",
+  "description": "Add tools and ingot.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "http://yusukemac.tk",
+  "authors": ["yusukemac"],
+}
+]

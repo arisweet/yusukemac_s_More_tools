@@ -1,0 +1,35 @@
+item.snowplowWood.name=Wood Snowplow
+item.snowplowStone.name=Stone Snowplow
+item.snowplowIron.name=Iron Snowplow
+item.snowplowGold.name=Gold Snowplow
+item.snowplowDiamond.name=Diamond Snowplow
+item.snowplowPlastic.name=Plastic Snowplow
+
+item.hammerWood.name=Wood Hammer
+item.hammerStone.name=Stone Hammer
+item.hammerIron.name=Iron Hammer
+item.hammerGold.name=Gold Hammer
+item.hammerDiamond.name=Diamond Hammer
+item.hammerPlastic.name=Plasitc hammer
+
+item.superDigger.name=§6Super Digger§r
+item.toolOfNature.name=§aTool of Nature§r
+item.toolOfTheEarth.name=§bTool of The Earth§r
+item.stoneBreaker.name=§dStone Breaker§r
+
+item.ingotPlastic.name=Plastic ingot
+item.toolOfTheEarthDebris.name=Debris of Tool of the Earth
+
+tile.orePlastic.name=Plastic ore
+
+itemGroup.YMTools=Yusukemac's MoreTools
+
+achievement.timeToSnowRemoval=Time to snow removal!
+achievement.timeToDismantling=Time to dismantling!
+achievement.getPlasticIngot=Get Plastic ingot!
+achievement.millionaire=§eMILLIONAIRE!§r
+
+achievement.timeToSnowRemoval.desc=Craft Snowplow
+achievement.timeToDismantling.desc=Craft Hammer
+achievement.getPlasticIngot.desc=Smelting ore and get Ingot
+achievement.millionaire.desc=Craft §bTool of The Earth§r
