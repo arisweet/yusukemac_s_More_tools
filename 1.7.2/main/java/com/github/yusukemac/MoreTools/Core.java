@@ -32,7 +32,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 
 @Mod(
         modid = "YMMoretools",
-        name = "yusukemac's More tools",
+        name = "Yusukemac's More tools",
         version = "2.0")
 
 /**
@@ -129,28 +129,28 @@ public class Core {
         }
         */
 
-        ingotPlastic = new Item().setCreativeTab(tabYMTools).setUnlocalizedName("ingotPlastic").setTextureName("plastic_ingot");
+        ingotPlastic = new Item().setCreativeTab(tabYMTools).setUnlocalizedName("ingotPlastic").setTextureName("ymmoretools:plastic_ingot");
         toolOfTheEarthDebris = new Item().setCreativeTab(tabYMTools).setUnlocalizedName("toolOfTheEarthDebris").setTextureName("debris_tooloftheearth");
 
-        hammerWood = new ItemHammer(ToolMaterial.WOOD).setUnlocalizedName("hammerWood").setTextureName("YMMoreTools:wood_hammer");
-        hammerStone = new ItemHammer(ToolMaterial.STONE).setUnlocalizedName("hammerStone").setTextureName("stone_hammer");
-        hammerIron = new ItemHammer(ToolMaterial.IRON).setUnlocalizedName("hammerIron").setTextureName("iron_hammer");
-        hammerGold = new ItemHammer(ToolMaterial.GOLD).setUnlocalizedName("hammerGold").setTextureName("gold_hammer");
-        hammerDiamond = new ItemHammer(ToolMaterial.EMERALD).setUnlocalizedName("hammerDiamond").setTextureName("diamond_hammer");
-        hammerPlastic = new ItemHammer(ToolMaterials.PLASTIC).setUnlocalizedName("hammerPlastic").setTextureName("plastic_hammer");
+        hammerWood = new ItemHammer(ToolMaterial.WOOD).setUnlocalizedName("hammerWood").setTextureName("ymmoretools:wood_hammer);
+        hammerStone = new ItemHammer(ToolMaterial.STONE).setUnlocalizedName("hammerStone").setTextureName("ymmoretools:stone_hammer");
+        hammerIron = new ItemHammer(ToolMaterial.IRON).setUnlocalizedName("hammerIron").setTextureName("ymmoretools:iron_hammer");
+        hammerGold = new ItemHammer(ToolMaterial.GOLD).setUnlocalizedName("hammerGold").setTextureName("ymmoretools:gold_hammer");
+        hammerDiamond = new ItemHammer(ToolMaterial.EMERALD).setUnlocalizedName("hammerDiamond").setTextureName("ymmoretools:diamond_hammer");
+        hammerPlastic = new ItemHammer(ToolMaterials.PLASTIC).setUnlocalizedName("hammerPlastic").setTextureName("ymmoretools:plastic_hammer");
 
-        snowplowWood = new ItemSnowplow(ToolMaterials.WOOD_snowplow).setUnlocalizedName("snowplowWood").setTextureName("wood_snowplow");
-        snowplowStone = new ItemSnowplow(ToolMaterials.STONE_snowplow).setUnlocalizedName("snowplowStone").setTextureName("stone_snowplow");
-        snowplowIron = new ItemSnowplow(ToolMaterials.IRON_snowplow).setUnlocalizedName("snowplowIron").setTextureName("iron_snowplow");
-        snowplowGold = new ItemSnowplow(ToolMaterials.GOLD_snowplow).setUnlocalizedName("snowplowGold").setTextureName("gold_snowplow");
-        snowplowDiamond = new ItemSnowplow(ToolMaterials.DIAMOND_snowplow).setUnlocalizedName("snowplowDiamond").setTextureName("diamond_snowplow");
-        snowplowPlastic = new ItemSnowplow(ToolMaterials.PLASTIC).setUnlocalizedName("snowplowPlastic").setTextureName("plastic_snowplow");
+        snowplowWood = new ItemSnowplow(ToolMaterials.WOOD_snowplow).setUnlocalizedName("snowplowWood").setTextureName("ymmoretools:wood_snowplow");
+        snowplowStone = new ItemSnowplow(ToolMaterials.STONE_snowplow).setUnlocalizedName("snowplowStone").setTextureName("ymmoretools:stone_snowplow");
+        snowplowIron = new ItemSnowplow(ToolMaterials.IRON_snowplow).setUnlocalizedName("snowplowIron").setTextureName("ymmoretools:iron_snowplow");
+        snowplowGold = new ItemSnowplow(ToolMaterials.GOLD_snowplow).setUnlocalizedName("snowplowGold").setTextureName("ymmoretools:gold_snowplow");
+        snowplowDiamond = new ItemSnowplow(ToolMaterials.DIAMOND_snowplow).setUnlocalizedName("snowplowDiamond").setTextureName("ymmoretools:diamond_snowplow");
+        snowplowPlastic = new ItemSnowplow(ToolMaterials.PLASTIC).setUnlocalizedName("snowplowPlastic").setTextureName("ymmoretools:plastic_snowplow");
 
-        superDigger = new ItemSuperDigger(ToolMaterials.SUPERDIGGER).setUnlocalizedName("superDigger").setTextureName("superdigger");
-        toolOfNature = new ItemToolOfNature(ToolMaterials.TOOLOFNATURE).setUnlocalizedName("toolOfNature").setTextureName("toolofnature");
-        toolOfTheEarth = new ItemToolOfTheEarth(ToolMaterials.TOOLOFTHEEARTH).setUnlocalizedName("toolOfTheEarth").setTextureName("tooloftheearth");
+        superDigger = new ItemSuperDigger(ToolMaterials.SUPERDIGGER).setUnlocalizedName("superDigger").setTextureName("ymmoretools:superdigger");
+        toolOfNature = new ItemToolOfNature(ToolMaterials.TOOLOFNATURE).setUnlocalizedName("toolOfNature").setTextureName("ymmoretools:toolofnature");
+        toolOfTheEarth = new ItemToolOfTheEarth(ToolMaterials.TOOLOFTHEEARTH).setUnlocalizedName("toolOfTheEarth").setTextureName("ymmoretools:tooloftheearth");
 
-        StoneBreaker = new ItemStoneBreaker(ToolMaterials.STONEBREAKER).setUnlocalizedName("stoneBreaker").setTextureName("stonebreaker");
+        StoneBreaker = new ItemStoneBreaker(ToolMaterials.STONEBREAKER).setUnlocalizedName("stoneBreaker").setTextureName("ymmoretools:stonebreaker");
 
         //ブロックの設定。機能はないので普通にBlockクラスで...といきたいがBlockクラスのコンストラクタがprotectedなので継承したクラスを用います
         orePlastic = new blockPlasticOre(Material.rock);
