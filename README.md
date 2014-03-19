@@ -1,11 +1,7 @@
-yusukemac_s_More_tools
+Yusukemac's MoreTools
 ======================
 
-my Third minecraft mod
-
-using MinecraftForge
-
+除雪機とハンマーを追加しています。ついでにプラスチック鉱石も(プラスチックが樹脂なのは知っています)
 
 Created by yusukemac.
-2013/12/26(Year/Month/Day)
-
+2013/12/26
